@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TradeTide – Find Professionals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+
+    <nav class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold">TradeTide</div>
+                <div class="flex items-center space-x-4">
+                    <a href="dashboard.html" class="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-200">
+                        Dashboard
+                    </a>
+                    <a href="login.html" class="border border-white/20 text-white hover:bg-white/10 font-semibold px-6 py-2 rounded-lg transition-colors">
+                        Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center py-16">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Find Local Experts</h1>
+            <p class="text-xl text-blue-100 mb-8">Skilled professionals offering their services in your area</p>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg p-4 shadow-lg flex flex-col md:flex-row gap-4">
+                    <div class="flex-1">
+                        <input type="text" id="search-input" placeholder="Search for skills or services..." class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                    </div>
+                    <div class="flex-1">
+                        <select id="location-select" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                            <option value="">All Locations</option>
+                            <option value="Pretoria">Pretoria</option>
+                            <option value="Johannesburg">Johannesburg</option>
+                            <option value="Cape Town">Cape Town</option>
+                            <option value="Durban">Durban</option>
+                            <option value="Midrand">Midrand</option>
+                        </select>
+                    </div>
+                    <button id="search-button" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-md font-semibold transition-all duration-200">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div id="professionals-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div id="loading-professionals" class="col-span-full text-center text-gray-500 hidden">Loading professionals...</div>
+                <div id="no-professionals-found" class="col-span-full text-center text-gray-500 hidden">No professionals found matching your criteria.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-white font-bold text-xl mb-4 md:mb-0">TradeTide</div>
+                <div class="text-sm">
+                    © 2025 TradeTide. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

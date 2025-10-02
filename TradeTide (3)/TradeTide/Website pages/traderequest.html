@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trade Request - TradeTide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+
+  <nav class="bg-blue-600 text-white shadow-lg">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="text-2xl font-bold">TradeTide</div>
+        <div class="flex items-center space-x-4">
+          <a href="dashboard.html" class="text-white hover:text-blue-200 font-medium transition-colors">Dashboard</a>
+          <a href="my-barters.html" class="text-white hover:text-blue-200 font-medium transition-colors">My Barters</a>
+          <a href="browse.html" class="text-white hover:text-blue-200 font-medium transition-colors">Browse</a>
+          <a href="messages.html" class="text-white hover:text-blue-200 font-medium transition-colors">Messages</a>
+          <a href="profile.html" class="border border-white/20 text-white hover:bg-white/10 font-semibold px-4 py-2 rounded-lg transition-colors">Profile</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold mb-4">Create a Trade Request</h1>
+        <p class="text-xl text-blue-100">Share your skills or find the services you need</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-6 py-8">
+    <div class="max-w-2xl mx-auto">
+
+      <div class="bg-white rounded-lg shadow-lg p-8">
+        <form action="submit-barter.php" method="POST" enctype="multipart/form-data" class="space-y-6">
+
+          <div>
+            <label for="barterTitle" class="block text-sm font-medium text-gray-700 mb-2">
+              Title <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="barterTitle"
+              name="barterTitle"
+              placeholder="What are you offering or requesting?"
+              required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+          </div>
+
+          <div>
+            <label for="barterType" class="block text-sm font-medium text-gray-700 mb-2">
+              Type <span class="text-red-500">*</span>
+            </label>
+            <select
+              id="barterType"
+              name="barterType"
+              required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="">Select Type</option>
+              <option value="offer">🤝 Offering a Service</option>
+              <option value="request">🔍 Requesting a Service</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="category" class="block text-sm font-medium text-gray-700 mb-2">
+              Category <span class="text-red-500">*</span>
+            </label>
+            <select
+              id="category"
+              name="category"
+              required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="">Choose a Category</option>
+              <option value="tech">💻 Technology & Programming</option>
+              <option value="design">🎨 Design & Creative</option>
+              <option value="writing">✍️ Writing & Content</option>
+              <option value="home">🏠 Home Services</option>
+              <option value="education">📚 Education & Tutoring</option>
+              <option value="photography">📷 Photography & Video</option>
+              <option value="marketing">📈 Marketing & Business</option>
+              <option value="music">🎵 Music & Entertainment</option>
+              <option value="fitness">💪 Health & Fitness</option>
+              <option value="other">🔧 Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="description" class="block text-sm font-medium text-gray-700 mb-2">
+              Description <span class="text-red-500">*</span>
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              rows="5"
+              placeholder="Describe what you're offering/requesting in detail. Include your experience level, time commitment, and any specific requirements..."
+              required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            ></textarea>
+            <p class="text-xs text-gray-500 mt-1">Be specific about your skills, experience, and expectations</p>
+          </div>
+
+          <div>
+            <label for="location" class="block text-sm font-medium text-gray-700 mb-2">
+              Location <span class="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              placeholder="e.g., Cape Town, Johannesburg, Remote, or Nationwide"
+              required
+              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+          </div>
+
+          <div>
+            <label for="timeline" class="block text-sm font-medium text-gray-700 mb-2">
+              Timeline
+            </label>
+            <select
+              id="timeline"
+              name="timeline"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="">Select Timeline</option>
+              <option value="immediate">Immediate (Within 1 week)</option>
+              <option value="flexible">Flexible (1-4 weeks)</option>
+              <option value="long-term">Long-term (1+ months)</option>
+              <option value="ongoing">Ongoing collaboration</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="exchange" class="block text-sm font-medium text-gray-700 mb-2">
+              What can you offer in return?
+            </label>
+            <textarea
+              id="exchange"
+              name="exchange"
+              rows="3"
+              placeholder="Describe what skills or services you can offer in exchange..."
+              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="image" class="block text-sm font-medium text-gray-700 mb-2">
+              Upload Image (optional)
+            </label>
+            <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md hover:border-blue-400 transition-colors">
+              <div class="space-y-1 text-center">
+                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                  <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <div class="flex text-sm text-gray-600">
+                  <label for="image" class="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500">
+                    <span>Upload a file</span>
+                    <input id="image" name="image" type="file" accept="image/*" class="sr-only">
+                  </label>
+                  <p class="pl-1">or drag and drop</p>
+                </div>
+                <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex items-center h-5">
+              <input
+                id="terms"
+                name="terms"
+                type="checkbox"
+                required
+                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              >
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="terms" class="text-gray-700">
+                I agree to the
+                <a href="#" class="text-blue-600 hover:text-blue-700">Terms of Service</a>
+                and confirm that my trade request is legitimate and respectful.
+                <span class="text-red-500">*</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <button
+              type="submit"
+              class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+            >
+              Submit Trade Request
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+      <div class="mt-8 bg-blue-50 rounded-lg p-6">
+        <h3 class="text-lg font-semibold text-blue-900 mb-4">💡 Tips for a Great Trade Request</h3>
+        <ul class="space-y-2 text-sm text-blue-800">
+          <li class="flex items-start"><span class="mr-2">•</span><span>Be specific about your skills and experience level</span></li>
+          <li class="flex items-start"><span class="mr-2">•</span><span>Include what you can offer in return to attract more responses</span></li>
+          <li class="flex items-start"><span class="mr-2">•</span><span>Add a clear timeline to help others plan accordingly</span></li>
+          <li class="flex items-start"><span class="mr-2">•</span><span>Upload a relevant image to make your post stand out</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-400 py-8 mt-12">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="text-white font-bold text-xl mb-4 md:mb-0">TradeTide</div>
+        <div class="text-sm">© 2025 TradeTide. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+<script src="script.js"></script> </body>
+</html>

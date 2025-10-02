@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browse Barters - TradeTide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+
+<nav class="bg-blue-600 text-white shadow-lg">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between flex-wrap">
+            <div class="text-2xl font-bold">TradeTide</div>
+            <div class="flex flex-wrap items-center space-x-4 mt-2 md:mt-0">
+                <a href="index.html" class="hover:text-blue-200 font-medium">Home</a>
+                <a href="dashboard.html" class="hover:text-blue-200 font-medium">Dashboard</a>
+                <a href="browsebarters.html" class="font-bold border-b-2 border-white pb-1">Browse Barters</a>
+                <a href="traderequest.html" class="hover:text-blue-200 font-medium">Trade Request</a>
+                <a href="mybarters.html" class="hover:text-blue-200 font-medium">My Barters</a>
+                <a href="messages.html" class="hover:text-blue-200 font-medium">Messages</a>
+                <a href="profile.html" class="hover:text-blue-200 font-medium">Profile</a>
+                <a href="settings.html" class="hover:text-blue-200 font-medium">Settings</a>
+                <a href="howitworks.html" class="hover:text-blue-200 font-medium">How It Works</a>
+                <a href="helpcontact.html" class="hover:text-blue-200 font-medium">Help & Contact</a>
+                <a href="login.html" class="border border-white/20 text-white hover:bg-white/10 font-semibold px-4 py-2 rounded-lg transition-colors">Login</a>
+                <a href="signup.html" class="border border-white/20 text-white hover:bg-white/10 font-semibold px-4 py-2 rounded-lg transition-colors">Sign Up</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-12">
+    <div class="container mx-auto px-6">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold mb-4">Browse Barters</h1>
+            <p class="text-xl text-blue-100">Discover amazing skills and services from our community</p>
+        </div>
+    </div>
+</header>
+
+<main class="container mx-auto px-6 py-8">
+
+    <section class="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h2 class="text-xl font-semibold text-gray-900 mb-4">Filter Barters</h2>
+        <form id="filter-form" action="#" method="GET" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+            <div class="md:col-span-2">
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Search barters..."
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+            </div>
+
+            <div>
+                <select
+                    name="category"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                >
+                    <option value="">All Categories</option>
+                    <option value="tech">💻 Technology</option>
+                    <option value="design">🎨 Design</option>
+                    <option value="writing">✍️ Writing</option>
+                    <option value="home">🏠 Home Services</option>
+                    <option value="education">📚 Education</option>
+                    <option value="photography">📷 Photography</option>
+                    <option value="marketing">📈 Marketing</option>
+                    <option value="music">🎵 Music</option>
+                    <option value="other">🔧 Other</option>
+                </select>
+            </div>
+
+            <div>
+                <select
+                    name="type"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                >
+                    <option value="">All Types</option>
+                    <option value="offer">🤝 Offering</option>
+                    <option value="request">🔍 Requesting</option>
+                </select>
+            </div>
+
+            <div class="md:col-span-4 flex justify-center mt-4">
+                <button
+                    type="submit"
+                    class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2 px-8 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+                >
+                    Apply Filters
+                </button>
+            </div>
+
+        </form>
+    </section>
+
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-900">Available Barters</h2>
+        <span id="results-count" class="text-gray-600">Loading results...</span>
+    </div>
+
+    <div id="barters-message" class="text-center py-4 text-gray-600 hidden"></div>
+
+    <section id="barters-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </section>
+
+    <div class="text-center mt-12">
+        <button id="load-more-btn" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hidden">
+            Load More Barters
+        </button>
+    </div>
+
+</main>
+
+<footer class="bg-gray-900 text-gray-400 py-8 mt-12">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="text-white font-bold text-xl mb-4 md:mb-0">TradeTide</div>
+            <div class="text-sm">
+                © 2025 TradeTide. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
