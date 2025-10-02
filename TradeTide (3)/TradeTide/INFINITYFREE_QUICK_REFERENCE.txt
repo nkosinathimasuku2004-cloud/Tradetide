@@ -1,0 +1,43 @@
+🚀 TRADETIDE INFINITYFREE DEPLOYMENT - QUICK REFERENCE
+
+📋 DEPLOYMENT STEPS:
+1. Go to https://infinityfree.net/ and create free account
+2. Create website subdomain (e.g., tradetide.infinityfreeapp.com)
+3. Upload ALL TradeTide files to htdocs folder
+4. Create MySQL database: tradetide_db
+5. Create database user: tradetide_user
+6. Update config/database.php with your credentials
+7. Import database_schema.sql via phpMyAdmin
+8. Run install.php in browser
+9. Add user Nathi via add_user_web.php
+10. Test your live website!
+
+🔧 DATABASE SETTINGS FOR INFINITYFREE:
+Host: sql300.infinityfree.com
+Database: tradetide_db
+Username: tradetide_user
+Password: (your chosen password)
+
+📁 FILES TO UPLOAD TO HTDOCS:
+- Website pages/ (entire folder)
+- api/ (entire folder)
+- assets/ (entire folder)
+- config/ (entire folder)
+- includes/ (entire folder)
+- database_schema.sql
+- install.php
+- add_user_web.php
+- infinityfree_setup.php
+- README.md
+
+🎯 YOUR WEBSITE WILL BE LIVE AT:
+https://yourdomain.infinityfreeapp.com/Website pages/pages/index.php
+
+👤 DEMO ACCOUNTS:
+- Sipho: sipho@example.com / password
+- Nathi: Nathi@2004.co.za / 12345678
+- Nomsa: nomsa@example.com / password
+
+✅ READY TO DEPLOY!
+Your TradeTide website is 100% bug-free and ready for InfinityFree!
+
